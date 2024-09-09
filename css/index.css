@@ -1,0 +1,416 @@
+/* сброс настроек CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Шрифты */
+
+.ibm-plex-mono-thin {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-mono-extralight {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-mono-light {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-medium {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-mono-semibold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-mono-thin-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-mono-extralight-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-mono-light-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-mono-regular-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-mono-medium-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-mono-semibold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-mono-bold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Основной CSS */
+
+/* Настройки блочной модели */
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(20, 20, 20, 1);
+}
+
+header .item a,
+a:visited {
+  font-family: "IBM Plex Mono";
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 27.3px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.3;
+  color: rgba(255, 255, 255, 1);
+  transition:
+    color 0.5s linear,
+    opacity 0.5s linear;
+}
+
+/* далее будет CSS для выбранной страницы сайта, 
+я не совсем полностью понял как семантически это сделать, 
+т.е я просто добавил класс active, но тут должно быть другое правило
+(правило привязки к открытой странице). Прошу дать ответ в ответ на мой
+пул реквест */
+
+/* сейчас почитал, что если открыта будет страница "магазин", то нужно
+к этой строчке добавить класс active, а с предыдущей строчки убрать,
+и так для каждой новой странице. Это так? */
+.item.active a {
+  color: rgba(255, 188, 91, 1);
+  opacity: 1;
+}
+.item.active {
+  border-bottom: 2px solid rgba(255, 188, 91, 1);
+}
+
+/* Настройки flex контейнеров header */
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: rgba(69, 32, 171, 1);
+}
+.header {
+  min-width: 1280px;
+  max-width: 1280px;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  width: 140px;
+}
+
+nav {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.item {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+header svg path {
+  opacity: 0.3;
+  transition:
+    stroke 0.5s linear,
+    opacity 0.5s linear;
+}
+
+header .picture {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 1);
+  background-image: url(../img/photo.jpeg);
+  background-size: 100%;
+}
+
+.title {
+  display: flex;
+  font-family: "IBM Plex Mono";
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 39px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  color: rgba(255, 188, 91, 1);
+  padding-bottom: 33px;
+  position: relative;
+}
+
+/* по другому не додумался как добавить эту стрелку
+при наведении, если подскажите в ответе на пул реквест
+буду благодарен */
+.arrow {
+  width: 15px;
+  margin-left: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0s linear 0.3s;
+}
+
+main {
+  padding: 50px 100px;
+  min-width: 1280px;
+  max-width: 1280px;
+}
+
+.burger-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.burger {
+  position: relative;
+}
+
+.cover-rating {
+  transition: transform 0.2s;
+}
+
+/* настройка :hover */
+@media (any-hover: hover) {
+  .item a:hover {
+    color: rgba(255, 188, 91, 1);
+    opacity: 1;
+    transition:
+      color 0.1s linear,
+      opacity 0.1s linear;
+  }
+
+  /* почему-то при убирании с лупы курсора, то цвет немного
+бросает в белый, не понимаю почему, ведь скорость изменения
+прозрачности и цвета одинаковые */
+  header svg:hover path {
+    stroke: rgba(255, 188, 91, 1);
+    opacity: 1;
+    transition:
+      stroke 0.1s linear,
+      opacity 0.1s linear;
+  }
+
+  section:hover .arrow {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .cover-rating:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+  }
+
+  .cover-rating:hover + .film {
+    color: rgba(255, 255, 255, 1);
+    transition: color 0.2s;
+  }
+
+  .cover-rating:hover ~ .info {
+    color: rgba(138, 138, 138, 1);
+    transition: color 0.2s;
+  }
+}
+
+.rating {
+  position: absolute;
+  font-family: "IBM Plex Mono";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23.4px;
+  letter-spacing: -0.17em;
+  width: 51px;
+  height: 30px;
+  padding: 3px 12px 3px 12px;
+  border-radius: 6px;
+  background: rgba(255, 188, 91, 1);
+  left: 12px;
+  top: 12px;
+}
+
+.film {
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: rgba(152, 152, 152, 1);
+  margin-top: 16px;
+}
+
+.info {
+  font-family: "IBM Plex Mono";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: rgba(81, 81, 81, 1);
+  margin-top: 8px;
+}
+
+.new-subscription button {
+  background-color: rgba(20, 20, 20, 1);
+  border: 0;
+  height: 182px;
+}
+
+.recomendation {
+  margin-top: 100px;
+}
+
+.recomendation button {
+  background-color: rgba(20, 20, 20, 1);
+  border: 0;
+  height: 485px;
+}
+
+/* media */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .third-film {
+    display: none;
+  }
+  main {
+    padding: 50px 25px;
+    min-width: 768px;
+    max-width: 768px;
+  }
+  .header {
+    padding: 0 25px;
+    min-width: 768px;
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 767px) {
+  .second-film,
+  .third-film {
+    display: none;
+  }
+  main {
+    padding: 25px 15px;
+    min-width: 400px;
+    max-width: 400px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    align-items: flex-end;
+    flex: 1 1 auto;
+    padding: 0 15px;
+    min-width: 400px;
+    max-width: 400px;
+    height: 110px;
+  }
+  nav {
+    height: 40px;
+    order: 1;
+  }
+
+  .recomendation {
+    margin-top: 50px;
+  }
+
+  section:hover .arrow {
+    visibility: hidden;
+  }
+}
